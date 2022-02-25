@@ -57,12 +57,11 @@ const getCountries=(country)=>
     }
 }
 
-// document.getElementById('search-button').addEventListener('click',function()
-// {
-//     const searchText=document.getElementById('search-text')
-//     const searchTextValue=searchText.value;
-//     fetch(`https://restcountries.com/v3.1/name/${searchTextValue}?fullText=true
-//     `)
-//     .then(response=>response.json())
-//     .then(name=>console.log(name))
-// })
+document.getElementById('search-button').addEventListener('click',function()
+{
+    const searchText=document.getElementById('search-text');
+    const searchTextValue=searchText.value;
+    fetch(`https://restcountries.com/v3.1/name/${searchTextValue}`)
+    .then(response=>response.json())
+    .then(newData=>getCountries(newData))
+})
